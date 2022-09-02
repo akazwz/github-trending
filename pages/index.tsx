@@ -24,7 +24,7 @@ import {
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import dayjs from 'dayjs'
-import { GoRepoForked, GoStar } from 'react-icons/go'
+import { GoLogoGithub, GoMarkGithub, GoRepoForked, GoStar } from 'react-icons/go'
 import { BsMoonFill, BsSunFill } from 'react-icons/bs'
 
 const colors = require('../src/colors.json')
@@ -180,6 +180,9 @@ const Home = () => {
 	return (
 		<Box mx="auto" maxWidth="3xl" p={3}>
 			<HStack>
+				<Link href={'https://github.com/akazwz/github-trending'} isExternal>
+					<IconButton aria-label={'github'} icon={<GoMarkGithub />} />
+				</Link>
 				<Spacer />
 				<IconButton
 					aria-label={'toggle color mode'}
