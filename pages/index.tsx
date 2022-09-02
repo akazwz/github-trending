@@ -81,9 +81,19 @@ const LanguageFilter = () => {
 				{language ? language.toString().split('-',).map((item) => item[0].toUpperCase() + item.slice(1) + ' ') : 'Language'}
 			</MenuButton>
 			<MenuList maxHeight="200px" overflowY="scroll">
-				<Input value={value} onInput={(event) => {
-					setValue(event.currentTarget.value)
-				}} />
+				<Input value={value} onInput={(event) => {setValue(event.currentTarget.value)}} />
+				<HStack
+					key={'all-language'}
+					p={3}
+					borderBottomWidth={1}
+					cursor="pointer"
+					onClick={async() => {
+						await handleClick('')
+						onClose()
+					}}
+				>
+					<Text>All</Text>
+				</HStack>
 				{
 					Object.keys(colors).filter((lang) => {
 						return lang.toLowerCase().indexOf(value.toLowerCase()) >= 0
